@@ -1,3 +1,6 @@
+dist: trusty # container based ubuntu 14.4
+sudo: false
+
 language: java
 jdk: 
   - oraclejdk8
@@ -14,9 +17,15 @@ addons:
   sonarqube:
     token:
       secure: $SONAR_GITHUB_TOKEN
+  apt:
+    packages:
+      - google-chrome-stable
+  firefox: latest
       
 before_install:
   - chmod +x ./travis.sh
-#branches:
-#  only:
-#    - master
+
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start &
+  - sleep 3
