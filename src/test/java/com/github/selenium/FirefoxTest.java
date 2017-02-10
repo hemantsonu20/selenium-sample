@@ -1,32 +1,23 @@
-package com.github.selenium.chrome;
+package com.github.selenium;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-
-public class ChromeTest {
+public class FirefoxTest {
 
     private static final String BASE_PATH = "https://github.com/hemantsonu20";
 
     private WebDriver driver;
 
-    @BeforeClass
-    public static void loadChromeDriver() {
-
-        ChromeDriverManager.getInstance().setup();
-    }
-
     @Before
     public void setUpDriver() {
 
-        driver = new ChromeDriver();
+        driver = new FirefoxDriver();
         driver.manage().window().maximize();
     }
 
@@ -37,7 +28,7 @@ public class ChromeTest {
     }
 
     @Test
-    public void openChrome() throws InterruptedException {
+    public void openFireFox() throws InterruptedException {
 
         driver.get(BASE_PATH);
         Thread.sleep(10000);
