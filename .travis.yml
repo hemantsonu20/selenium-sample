@@ -20,7 +20,6 @@ addons:
   apt:
     packages:
       - google-chrome-stable
-  firefox: latest
       
 before_install:
   - chmod +x ./travis.sh
