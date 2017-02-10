@@ -2,6 +2,6 @@
 
 # selenium-sample
 
-A sample selenium test suite using chrome and firefox driver
+A sample selenium test suite using chrome and firefox driver.
 
-See examples in [test files](src/test/java/com/github/selenium) for 
+See sample examples in [test files](src/test/java/com/github/selenium)
