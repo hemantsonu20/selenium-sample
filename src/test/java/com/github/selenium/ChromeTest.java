@@ -1,6 +1,7 @@
 package com.github.selenium;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 import org.junit.Before;
@@ -37,11 +38,20 @@ public class ChromeTest {
     }
 
     @Test
-    public void openChrome() throws InterruptedException {
+    public void openGithubProfile() throws InterruptedException {
 
         driver.get(BASE_PATH);
-        Thread.sleep(10000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         
         assertEquals("hemantsonu20 (Pratapi Hemant) · GitHub", driver.getTitle());
+        
+        WebElement fullName = driver.findElement(By.className("vcard-fullname d-block"));
+        WebElement userName = driver.findElement(By.className("vcard-username d-block"));
+        
+        assertTrue(fullName.isDisplayed());
+        assertTrue(userName.isDisplayed());
+        
+        assertEquals("Pratapi Hemant", fullName.getText());
+        assertEquals("hemantsonu20", userName.getText());
     }
 }
