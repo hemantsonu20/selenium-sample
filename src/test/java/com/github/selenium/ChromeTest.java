@@ -49,8 +49,8 @@ public class ChromeTest {
         
         assertEquals("hemantsonu20 (Pratapi Hemant) · GitHub", driver.getTitle());
         
-        WebElement fullName = driver.findElement(By.className("vcard-fullname d-block"));
-        WebElement userName = driver.findElement(By.className("vcard-username d-block"));
+        WebElement fullName = driver.findElement(By.className("vcard-fullname"));
+        WebElement userName = driver.findElement(By.className("vcard-username"));
         
         assertTrue(fullName.isDisplayed());
         assertTrue(userName.isDisplayed());
