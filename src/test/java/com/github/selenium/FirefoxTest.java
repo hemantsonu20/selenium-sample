@@ -2,6 +2,8 @@ package com.github.selenium;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,6 +21,7 @@ public class FirefoxTest {
 
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @After
@@ -31,7 +34,6 @@ public class FirefoxTest {
     public void openFireFox() throws InterruptedException {
 
         driver.get(BASE_PATH);
-        Thread.sleep(10000);
         
         assertEquals("hemantsonu20 (Pratapi Hemant) · GitHub", driver.getTitle());
     }
