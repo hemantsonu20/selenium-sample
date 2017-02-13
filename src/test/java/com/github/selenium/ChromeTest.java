@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.concurrent.TimeUnit;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
@@ -57,5 +58,15 @@ public class ChromeTest {
         
         assertEquals("Pratapi Hemant", fullName.getText());
         assertEquals("hemantsonu20", userName.getText());
+        
+        WebElement searchBox = driver.findElement(By.className("header-search-input"));
+        searchBox.sendKeys("hemantsonu20/selenium-sample");
+        searchBox.submit();
+        
+        WebElement repoList = driver.findElement(By.className("repo-list"));
+        List<WebElement> repoNames = repoList.findElements(By.tagName("a"));
+        
+        boolean found = repoNames.stream().anyMatch(e -> e.getAttribute("href").contains("/hemantsonu20/selenium-sample"));
+        assertTrue(found);
     }
 }
