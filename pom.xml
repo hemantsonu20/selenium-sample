@@ -68,6 +68,7 @@
 			<version>${weddrivermanager.version}</version>
 		</dependency>
 	</dependencies>
+    
 	<build>
 		<plugins>
 			<plugin>
@@ -77,3 +78,4 @@
 		</plugins>
 	</build>
 </project>
+
