@@ -31,10 +31,10 @@ public class FirefoxTest {
     }
 
     @Test
-    public void openFireFox() throws InterruptedException {
+    public void openGithubProfile() {
 
         driver.get(BASE_PATH);
-        
+
         assertEquals("hemantsonu20 (Pratapi Hemant) · GitHub", driver.getTitle());
     }
 }
