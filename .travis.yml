@@ -1,5 +1,5 @@
-#dist: trusty # container based ubuntu 14.4
-#sudo: false
+dist: trusty # container based ubuntu 14.4
+sudo: false
 
 language: java
 jdk: 
