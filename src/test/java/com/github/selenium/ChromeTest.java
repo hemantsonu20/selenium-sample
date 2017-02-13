@@ -34,6 +34,7 @@ public class ChromeTest {
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @After
@@ -47,7 +48,6 @@ public class ChromeTest {
 
         // open hemantsonu20's github profile
         driver.get(BASE_PATH);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         
         // assert title of the page with full name
         assertEquals("hemantsonu20 (Pratapi Hemant) · GitHub", driver.getTitle());
